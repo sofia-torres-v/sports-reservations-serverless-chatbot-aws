@@ -22,7 +22,6 @@ Backend serverless en AWS para gestionar créditos y reservas deportivas mediant
 - [Configuración de Servicios AWS](#-configuración-de-servicios-aws)
 - [Variables de Entorno](#-variables-de-entorno)
 - [API Reference](#-api-reference)
-- [Roadmap](#-roadmap)
 - [Licencia](#-licencia)
 
 ---
@@ -104,7 +103,6 @@ Lambda Router → reserve_court.py
     ↓
 Usuario: "✅ Reserva confirmada! Código: RES-ABC123"
 ```
-
 ---
 
 ## 🛠️ Tecnologías
@@ -171,40 +169,40 @@ aws configure
 ```
 sports-reservations-serverless-chatbot-aws/
 │
-├── functions/                      # Código de las Lambdas
+├── functions/                      
 │   │
-│   ├── check-balance/              # Lambda 1: Consultar saldo
+│   ├── check-balance/              
 │   │   ├── index.py
 │   │   └── requirements.txt
 │   │
-│   ├── router/                     # Lambda 2: Router principal
+│   ├── router/                    
 │   │   ├── handlers/
 │   │   │   ├── __init__.py
-│   │   │   ├── load_credits.py    # Handler de carga
-│   │   │   └── reserve_court.py   # Handler de reservas
-│   │   ├── index.py                # Punto de entrada
-│   │   ├── utils.py                # Funciones compartidas
+│   │   │   ├── load_credits.py    
+│   │   │   └── reserve_court.py  
+│   │   ├── index.py                
+│   │   ├── utils.py                
 │   │   └── requirements.txt
 │   │
-│   └── text-parser/                # Lambda 3: Formatear texto
+│   └── text-parser/            
 │       ├── index.py
 │       └── requirements.txt
 │
-├── events/                         # Eventos de prueba
+├── events/                         
 │   ├── check-balance-event.json
 │   ├── reserve-event.json
 │   └── load-credits-event.json
 │
-├── docs/                           # Documentación adicional
+├── docs/                         
 │   ├── architecture.md
 │   ├── api-reference.md
 │   └── deployment-guide.md
 │
-├── .gitignore                      # Archivos ignorados por Git
-├── template.yaml                   # SAM template (IaC)
-├── samconfig.toml                  # Configuración de SAM
-├── README.md                       # Este archivo
-└── LICENSE                         # Licencia MIT
+├── .gitignore                   
+├── template.yaml                
+├── samconfig.toml                  
+├── README.md                     
+└── LICENSE                         
 ```
 
 ---
@@ -598,31 +596,6 @@ Environment:
   "created_at": "2025-11-22T16:00:00-03:00" 
 }
 ```
-
----
-
-## 🗺️ Roadmap
-
-### ✅ Completado (v1.0)
-- [x] Sistema de reservas
-- [x] Carga de créditos
-- [x] Consulta de saldo
-- [x] Validación de zona horaria (Buenos Aires)
-- [x] Pre-llenado inteligente de slots
-- [x] Integración con Amazon Q
-
-### 🚧 En Progreso (v1.1)
-- [ ] Unit tests con pytest
-- [ ] CI/CD con GitHub Actions
-- [ ] Documentación de API en OpenAPI
-
-### 📅 Futuro (v2.0)
-- [ ] Notificaciones por email (SES)
-- [ ] Notificaciones por SMS (SNS)
-- [ ] API REST pública (API Gateway)
-- [ ] Dashboard de métricas (CloudWatch Dashboards)
-- [ ] Soporte multi-idioma (inglés, portugués)
-- [ ] Integración con pagos (Stripe/MercadoPago)
 
 ---
 
